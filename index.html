@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Inspiração em construção, acabamentos, decoração, pisos, rodapés, banheiros e áreas externas.">
+<title>RM Decor | Inspiração em Acabamentos e Decoração</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #304b43;
+  --green-light: #527367;
+  --sand: #e9dfd0;
+  --cream: #faf8f4;
+  --text: #343b37;
+  --muted: #707873;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); }
+a { text-decoration: none; }
+h1,h2,h3 { font-family: 'Playfair Display',serif; }
+.topbar {
+  background: var(--green);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.navbar {
+  background: white;
+  padding: 17px 0;
+  box-shadow: 0 2px 15px #00000009;
+}
+.brand {
+  font-size: 30px;
+  color: var(--green);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.brand span { color: #b48b62; }
+.nav-link { font-size: 13px; font-weight: 600; margin: 0 7px; }
+.nav-link:hover { color: var(--green-light); }
+.btn-main {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  padding: 14px 26px;
+  border: 1px solid var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .25s;
+}
+.btn-main:hover { background: var(--green-light); color: white; }
+.btn-outline-custom {
+  display: inline-block;
+  padding: 13px 25px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.btn-outline-custom:hover { background: var(--green); color: white; }
+.hero {
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg,rgba(19,34,29,.82),rgba(19,34,29,.15)),
+    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1900&q=85')
+    center/cover no-repeat;
+}
+.hero-copy { max-width: 650px; padding: 80px 0; }
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(40px,5.5vw,68px);
+  line-height: 1.13;
+  margin: 20px 0;
+}
+.hero p { line-height: 1.9; max-width: 510px; color: #f2f2ed; }
+.section { padding: 85px 0; }
+.section-title { text-align: center; max-width: 650px; margin: 0 auto 45px; }
+.section-title .eyebrow { color: #b18c65; }
+.section-title h2 { font-size: clamp(30px,4vw,44px); margin: 15px 0; }
+.section-title p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.benefits { background: var(--cream); padding: 25px 0; }
+.benefit { display: flex; align-items: center; gap: 14px; justify-content: center; padding: 10px; }
+.benefit i { font-size: 26px; color: var(--green-light); }
+.benefit strong { display: block; font-size: 12px; }
+.benefit small { color: var(--muted); font-size: 11px; }
+.category {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--sand);
+}
+.category img { width: 100%; height: 320px; object-fit: cover; transition: .5s; }
+.category:hover img { transform: scale(1.05); }
+.category::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent,rgba(0,0,0,.72));
+}
+.category-info { position: absolute; z-index: 1; bottom: 22px; left: 24px; color: white; }
+.category-info h3 { font-size: 26px; }
+.category-info span { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.soft { background: var(--cream); }
+.feature-img { width: 100%; height: 470px; object-fit: cover; }
+.feature-copy { padding: 40px 8%; }
+.feature-copy h2 { font-size: clamp(31px,4vw,47px); margin: 18px 0; }
+.feature-copy p { font-size: 14px; color: var(--muted); line-height: 1.9; }
+.product {
+  border: 1px solid #ebe9e4;
+  background: white;
+  height: 100%;
+  transition: .25s;
+}
+.product:hover { transform: translateY(-5px); box-shadow: 0 12px 25px #0000000b; }
+.product img { width: 100%; height: 245px; object-fit: cover; }
+.product-body { padding: 22px; }
+.product h3 { font-size: 22px; }
+.product p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+.product a { font-size: 11px; color: var(--green); font-weight: 700; text-transform: uppercase; }
+.banner {
+  color: white;
+  padding: 100px 0;
+  background:
+    linear-gradient(90deg,rgba(26,45,37,.83),rgba(26,45,37,.2)),
+    url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1900&q=85')
+    center/cover no-repeat;
+}
+.banner h2 { font-size: clamp(34px,4vw,54px); max-width: 650px; margin: 20px 0; }
+.banner p { max-width: 510px; line-height: 1.9; }
+.info-icon {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: #e8efe9;
+  color: var(--green);
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.info-card h3 { font-size: 23px; }
+.info-card p { color: var(--muted); font-size: 13px; line-height: 1.8; }
+.cta { background: var(--green); color: white; padding: 75px 0; text-align: center; }
+.cta h2 { font-size: clamp(30px,4vw,44px); }
+.cta p { max-width: 650px; margin: 20px auto; line-height: 1.8; color: #dce6df; }
+.cta .btn-main { background: white; border-color: white; color: var(--green); }
+.footer { background: #202f29; color: white; padding: 55px 0 20px; }
+.footer .brand { color: white; }
+.footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; }
+.footer p,.footer a { color: #c9d4cd; font-size: 12px; line-height: 2; }
+.footer a:hover { color: white; }
+.footer-bottom { border-top: 1px solid #44564c; margin-top: 35px; padding-top: 20px; font-size: 11px; color: #bdcbc1; }
+@media(max-width:767px) {
+  .hero { min-height: 490px; }
+  .hero-copy { padding: 60px 12px; }
+  .section { padding: 60px 0; }
+  .category img { height: 270px; }
+  .feature-img { height: 310px; }
+  .feature-copy { padding: 40px 25px; }
+  .product img { height: 220px; }
+  .banner { padding: 70px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">INSPIRAÇÃO EM ACABAMENTOS, CONSTRUÇÃO E DECORAÇÃO</div>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand" href="#inicio">RM <span>DECOR</span></a>
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#menu"
+      aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
+        <li class="nav-item"><a class="nav-link" href="#destaques">Destaques</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn-main" href="https://rmdecor.com.br/" target="_blank" rel="noopener">Visitar loja</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="eyebrow">Sua casa com mais personalidade</span>
+      <h1>Detalhes que transformam seus ambientes.</h1>
+      <p>
+        Inspire-se em soluções de acabamento e decoração
+        para criar espaços elegantes, funcionais e acolhedores.
+        Descubra ideias para áreas internas e externas.
+      </p>
+      <div class="d-flex flex-wrap gap-3 mt-4">
+        <a href="#categorias" class="btn-main">Explorar categorias</a>
+        <a href="#destaques" class="btn-main" style="background:transparent;border-color:white">Ver inspirações</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="benefits">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="benefit">
+          <i class="bi bi-house-heart"></i>
+          <div><strong>Ambientes especiais</strong><small>Ideias para sua casa</small></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit">
+          <i class="bi bi-grid"></i>
+          <div><strong>Acabamentos modernos</strong><small>Estética e funcionalidade</small></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit">
+          <i class="bi bi-tree"></i>
+          <div><strong>Áreas externas</strong><small>Inspiração para jardim e lazer</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categorias">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Encontre sua inspiração</span>
+      <h2>Categorias para transformar seu espaço</h2>
+      <p>Explore possibilidades em pisos, banheiros, rodapés, decoração e ambientes externos.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="category">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Ambiente com pisos modernos" loading="lazy">
+          <div class="category-info"><h3>Pisos</h3><span>Conhecer opções <i class="bi bi-arrow-up-right"></i></span></div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="category">
+          <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85" alt="Banheiro contemporâneo" loading="lazy">
+          <div class="category-info"><h3>Banheiro</h3><span>Explorar categoria <i class="bi bi-arrow-up-right"></i></span></div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="category">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Acabamento de interiores" loading="lazy">
+          <div class="category-info"><h3>Rodapés</h3><span>Ver inspirações <i class="bi bi-arrow-up-right"></i></span></div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="category">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Sala com decoração elegante" loading="lazy">
+          <div class="category-info"><h3>Casa e decoração</h3><span>Descobrir ideias <i class="bi bi-arrow-up-right"></i></span></div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="category">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85" alt="Ambiente com acabamento em madeira" loading="lazy">
+          <div class="category-info"><h3>Painéis e WPC</h3><span>Ver possibilidades <i class="bi bi-arrow-up-right"></i></span></div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="category">
+          <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=85" alt="Espaço para lazer e descanso" loading="lazy">
+          <div class="category-info"><h3>Jardim e lazer</h3><span>Explorar opções <i class="bi bi-arrow-up-right"></i></span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="destaques">
+  <div class="container-fluid p-0">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6">
+        <img class="feature-img" src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85" alt="Interior com acabamentos sofisticados" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <div class="feature-copy">
+          <span class="eyebrow" style="color:#a7815d">Design e funcionalidade</span>
+          <h2>Acabamentos que valorizam cada detalhe.</h2>
+          <p>
+            Pisos, rodapés e revestimentos ajudam a criar
+            uma identidade visual para cada ambiente.
+            A escolha dos materiais pode fazer toda a diferença
+            no resultado de um projeto.
+          </p>
+          <p>
+            Conheça soluções e ideias para renovar espaços
+            residenciais e comerciais.
+          </p>
+          <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener" class="btn-main mt-2">Explorar produtos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Seleção de categorias</span>
+      <h2>Inspirações para seu projeto</h2>
+      <p>Conheça alguns tipos de produtos presentes no universo de acabamentos e decoração.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80" alt="Acabamento interno" loading="lazy">
+          <div class="product-body">
+            <h3>Rodapés decorativos</h3>
+            <p>Detalhes que ajudam a proporcionar um acabamento harmonioso aos ambientes.</p>
+            <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener">Consultar opções <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80" alt="Painéis decorativos em ambiente interno" loading="lazy">
+          <div class="product-body">
+            <h3>Painéis ripados</h3>
+            <p>Texturas e linhas que acrescentam personalidade à composição dos espaços.</p>
+            <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener">Consultar opções <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=700&q=80" alt="Banheiro elegante" loading="lazy">
+          <div class="product-body">
+            <h3>Itens para banheiro</h3>
+            <p>Inspirações para criar ambientes com conforto, beleza e praticidade.</p>
+            <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener">Consultar opções <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80" alt="Projeto de área residencial" loading="lazy">
+          <div class="product-body">
+            <h3>Pisos e revestimentos</h3>
+            <p>Possibilidades para renovar o visual e a funcionalidade dos ambientes.</p>
+            <a href="https://rmdecor.com.br/produtos/" target="_blank" rel="noopener">Consultar opções <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="container">
+    <span class="eyebrow">Sua casa, seu estilo</span>
+    <h2>Transforme suas ideias em ambientes especiais.</h2>
+    <p>Explore referências de materiais e acabamentos que ajudam a criar espaços com identidade.</p>
+    <a href="https://rmdecor.com.br/" target="_blank" rel="noopener" class="btn-main mt-3">Conhecer a loja</a>
+  </div>
+</section>
+
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Sobre a proposta</span>
+      <h2>Uma nova forma de imaginar seus ambientes</h2>
+      <p>Este modelo reúne ideias de construção, acabamento e decoração em uma experiência visual simples e organizada.</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon"><i class="bi bi-gem"></i></div>
+          <h3>Estética</h3>
+          <p>Escolhas de materiais, texturas e cores que ajudam a valorizar cada espaço.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+          <h3>Funcionalidade</h3>
+          <p>Soluções que equilibram organização, praticidade e o uso cotidiano dos ambientes.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon"><i class="bi bi-house-heart"></i></div>
+          <h3>Personalidade</h3>
+          <p>Inspirações para criar ambientes que reflitam diferentes estilos e necessidades.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="container">
+    <h2>Encontre inspiração para seu próximo projeto</h2>
+    <p>Consulte o catálogo oficial da RM Decor para verificar produtos, preços, disponibilidade e condições de compra.</p>
+    <a href="https://rmdecor.com.br/" target="_blank" rel="noopener" class="btn-main">
+      Acessar site oficial <i class="bi bi-arrow-up-right"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <div class="brand mb-3">RM <span>DECOR</span></div>
+        <p>Modelo demonstrativo de página sobre construção, acabamentos e decoração, inspirado nas categorias da RM Decor.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h4>Navegação</h4>
+        <p><a href="#inicio">Início</a></p>
+        <p><a href="#categorias">Categorias</a></p>
+        <p><a href="#destaques">Destaques</a></p>
+        <p><a href="#sobre">Sobre</a></p>
+      </div>
+      <div class="col-6 col-md-4">
+        <h4>Site original</h4>
+        <p>Para informações oficiais sobre produtos e compras:</p>
+        <a href="https://rmdecor.com.br/" target="_blank" rel="noopener">rmdecor.com.br <i class="bi bi-box-arrow-up-right"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© 2026 — Página demonstrativa independente.</span>
+      <span>Imagens ilustrativas. Não é o site oficial da RM Decor.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
