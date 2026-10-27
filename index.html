@@ -1,280 +1,772 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Página demonstrativa sobre equipamentos profissionais para banho e tosa, secadores, sopradores e acessórios pet.">
-<title>Equipamentos Pet | Banho e Tosa Profissional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RM Decor - Inspirações e soluções em decoração, revestimentos e acabamentos para ambientes.">
+  <title>RM Decor | Decoração e Acabamentos</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --blue: #173a5b;
-  --blue2: #245a85;
-  --yellow: #f6bd38;
-  --light: #f4f8fb;
-  --text: #263645;
-  --muted: #6b7782;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  color: var(--text);
-}
-h1,h2,h3,h4 {
-  font-family: 'Montserrat', sans-serif;
-}
-a { text-decoration: none; }
-.topbar {
-  background: var(--blue);
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: .7px;
-}
-.navbar {
-  background: white;
-  padding: 16px 0;
-  box-shadow: 0 2px 14px rgba(0,0,0,.05);
-}
-.brand {
-  font-size: 25px;
-  font-weight: 800;
-  color: var(--blue);
-  letter-spacing: -1px;
-}
-.brand span { color: #e3a921; }
-.brand small {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-.nav-link {
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 700;
-  margin: 0 7px;
-}
-.nav-link:hover { color: var(--blue2); }
-.btn-main {
-  display: inline-block;
-  background: var(--yellow);
-  border: 1px solid var(--yellow);
-  color: #1d3040;
-  padding: 14px 25px;
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  transition: .25s;
-}
-.btn-main:hover {
-  background: #e4a820;
-  border-color: #e4a820;
-  color: #1d3040;
-}
-.btn-outline {
-  display: inline-block;
-  padding: 13px 24px;
-  border: 1px solid white;
-  color: white;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.btn-outline:hover { background: white; color: var(--blue); }
-.hero {
-  min-height: 590px;
-  display: flex;
-  align-items: center;
-  color: white;
-  background:
-    linear-gradient(90deg,rgba(10,36,61,.9),rgba(10,36,61,.24)),
-    url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1900&q=85')
-    center/cover no-repeat;
-}
-.hero-content { max-width: 690px; padding: 80px 0; }
-.tag {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.hero h1 {
-  font-size: clamp(38px,5vw,64px);
-  line-height: 1.13;
-  margin: 20px 0;
-}
-.hero p {
-  color: #e7edf2;
-  font-size: 15px;
-  line-height: 1.9;
-  max-width: 540px;
-}
-.benefits { background: var(--light); padding: 25px 0; }
-.benefit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 13px;
-  padding: 12px;
-}
-.benefit i { font-size: 28px; color: var(--blue2); }
-.benefit strong { display: block; font-size: 12px; }
-.benefit small { color: var(--muted); font-size: 11px; }
-.section { padding: 85px 0; }
-.section-title {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 45px;
-}
-.section-title .tag { color: var(--blue2); }
-.section-title h2 {
-  font-size: clamp(28px,4vw,43px);
-  margin: 16px 0;
-}
-.section-title p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-.category {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  background: #dce5ed;
-}
-.category img {
-  width: 100%;
-  height: 305px;
-  object-fit: cover;
-  transition: .5s;
-}
-.category:hover img { transform: scale(1.05); }
-.category::after {
-  content: "";
-  position: absolute;
-  inset: 35% 0 0;
-  background: linear-gradient(transparent,rgba(0,0,0,.75));
-}
-.category-info {
-  position: absolute;
-  z-index: 1;
-  bottom: 22px;
-  left: 23px;
-  color: white;
-}
-.category-info h3 { font-size: 24px; }
-.category-info span { font-size: 11px; text-transform: uppercase; }
-.soft { background: var(--light); }
-.feature-img { width: 100%; height: 470px; object-fit: cover; }
-.feature-copy { padding: 45px 8%; }
-.feature-copy h2 { font-size: clamp(30px,4vw,45px); margin: 20px 0; }
-.feature-copy p { font-size: 14px; color: var(--muted); line-height: 1.9; }
-.product {
-  border: 1px solid #e6ebef;
-  background: white;
-  height: 100%;
-  transition: .25s;
-}
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.07);
-}
-.product img {
-  width: 100%;
-  height: 235px;
-  object-fit: cover;
-}
-.product-body { padding: 22px; }
-.product-body h3 { font-size: 19px; line-height: 1.4; }
-.product-body p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-.product-body a {
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--blue2);
-  text-transform: uppercase;
-}
-.banner {
-  padding: 100px 0;
-  color: white;
-  background:
-    linear-gradient(90deg,rgba(13,43,70,.88),rgba(13,43,70,.2)),
-    url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1800&q=85')
-    center/cover no-repeat;
-}
-.banner h2 { font-size: clamp(33px,4vw,50px); max-width: 650px; margin: 20px 0; }
-.banner p { max-width: 530px; line-height: 1.9; }
-.info-icon {
-  width: 58px; height: 58px;
-  display: grid; place-items: center;
-  background: #e7f0f7;
-  color: var(--blue2);
-  font-size: 26px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-.info-card h3 { font-size: 21px; }
-.info-card p { color: var(--muted); font-size: 13px; line-height: 1.8; }
-.cta { padding: 75px 0; background: var(--blue); color: white; text-align: center; }
-.cta h2 { font-size: clamp(29px,4vw,43px); }
-.cta p { max-width: 650px; margin: 20px auto; color: #dce6ef; line-height: 1.8; }
-.footer { background: #102a40; color: white; padding: 55px 0 20px; }
-.footer .brand { color: white; }
-.footer h4 { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px; }
-.footer p,.footer a { color: #c7d5df; font-size: 12px; line-height: 2; }
-.footer a:hover { color: white; }
-.footer-bottom {
-  border-top: 1px solid #3d5365;
-  margin-top: 35px;
-  padding-top: 20px;
-  color: #bbcedb;
-  font-size: 11px;
-}
-@media(max-width:767px) {
-  .hero { min-height: 510px; }
-  .hero-content { padding: 65px 10px; }
-  .section { padding: 60px 0; }
-  .category img { height: 265px; }
-  .feature-img { height: 310px; }
-  .feature-copy { padding: 40px 25px; }
-  .product img { height: 210px; }
-  .banner { padding: 70px 0; }
-}
-</style>
+  <style>
+    :root {
+      --principal: #283d34;
+      --secundaria: #b78e63;
+      --claro: #f7f5f1;
+      --texto: #303632;
+      --cinza: #777d79;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--texto);
+      background: #fff;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+    }
+
+    a { text-decoration: none; }
+
+    .topbar {
+      background: var(--principal);
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    .navbar {
+      padding: 18px 0;
+      background: white;
+      box-shadow: 0 2px 15px rgba(0,0,0,.05);
+    }
+
+    .logo {
+      color: var(--principal);
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--secundaria); }
+
+    .nav-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--texto);
+      margin: 0 8px;
+    }
+
+    .nav-link:hover { color: var(--secundaria); }
+
+    .btn-principal {
+      display: inline-block;
+      padding: 14px 25px;
+      background: var(--principal);
+      color: white;
+      border: 1px solid var(--principal);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      transition: .25s;
+    }
+
+    .btn-principal:hover {
+      background: var(--secundaria);
+      border-color: var(--secundaria);
+      color: white;
+    }
+
+    .btn-outline-custom {
+      display: inline-block;
+      padding: 13px 25px;
+      border: 1px solid var(--principal);
+      color: var(--principal);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: .25s;
+    }
+
+    .btn-outline-custom:hover {
+      background: var(--principal);
+      color: white;
+    }
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(18,33,26,.85), rgba(18,33,26,.12)),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      padding: 80px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--secundaria);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1.12;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      max-width: 550px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #e4e6e2;
+    }
+
+    .hero .btn-principal {
+      background: var(--secundaria);
+      border-color: var(--secundaria);
+    }
+
+    .hero .btn-principal:hover {
+      background: white;
+      border-color: white;
+      color: var(--principal);
+    }
+
+    .beneficios {
+      padding: 25px 0;
+      background: var(--claro);
+    }
+
+    .beneficio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      padding: 10px;
+    }
+
+    .beneficio i {
+      font-size: 28px;
+      color: var(--secundaria);
+    }
+
+    .beneficio strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .beneficio small {
+      color: var(--cinza);
+      font-size: 11px;
+    }
+
+    .secao { padding: 85px 0; }
+
+    .titulo-secao {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .titulo-secao h2 {
+      margin: 15px 0;
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .titulo-secao p {
+      color: var(--cinza);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .categoria {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .categoria img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: transform .45s;
+    }
+
+    .categoria:hover img { transform: scale(1.05); }
+
+    .categoria::after {
+      content: "";
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.75));
+    }
+
+    .categoria-info {
+      position: absolute;
+      z-index: 1;
+      bottom: 24px;
+      left: 25px;
+      color: white;
+    }
+
+    .categoria-info h3 { font-size: 23px; }
+
+    .categoria-info span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .produto {
+      border: 1px solid #e9e9e6;
+      height: 100%;
+      transition: .25s;
+      background: white;
+    }
+
+    .produto:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,.07);
+    }
+
+    .produto img {
+      width: 100%;
+      height: 255px;
+      object-fit: cover;
+    }
+
+    .produto-info { padding: 22px; }
+
+    .produto-info h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .produto-info p {
+      color: var(--cinza);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .produto-info a {
+      color: var(--principal);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .editorial { background: var(--claro); }
+
+    .editorial-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .editorial-texto { padding: 50px 8%; }
+
+    .editorial-texto h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin: 18px 0;
+    }
+
+    .editorial-texto p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--cinza);
+    }
+
+    .institucional {
+      background: white;
+    }
+
+    .institucional-card {
+      padding: 35px;
+      border: 1px solid #e9e9e6;
+      height: 100%;
+    }
+
+    .institucional-card i {
+      color: var(--secundaria);
+      font-size: 30px;
+    }
+
+    .institucional-card h3 {
+      font-size: 18px;
+      margin: 18px 0 12px;
+    }
+
+    .institucional-card p {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--cinza);
+    }
+
+    .banner-final {
+      background: var(--principal);
+      color: white;
+      text-align: center;
+      padding: 75px 0;
+    }
+
+    .banner-final h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      margin: 15px 0;
+    }
+
+    .banner-final p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #d5dfd9;
+      line-height: 1.8;
+    }
+
+    .footer {
+      background: #192820;
+      color: white;
+      padding: 65px 0 25px;
+    }
+
+    .footer h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer p, .footer a, .footer li {
+      color: #cbd4ce;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .footer a:hover { color: white; }
+
+    .footer ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .footer li { margin-bottom: 8px; }
+
+    .footer .logo { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid #405147;
+      padding-top: 22px;
+      margin-top: 40px;
+      color: #cbd4ce;
+      font-size: 11px;
+    }
+
+    @media(max-width:767px) {
+      .hero { min-height: 470px; }
+      .hero-content { padding: 60px 10px; }
+      .secao { padding: 60px 0; }
+      .categoria img { height: 280px; }
+      .produto img { height: 230px; }
+      .editorial-img { height: 320px; }
+      .editorial-texto { padding: 40px 25px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  EQUIPAMENTOS E INSPIRAÇÃO PARA BANHO E TOSA PROFISSIONAL
-</div>
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    INSPIRAÇÕES PARA TRANSFORMAR SEUS AMBIENTES
+  </div>
 
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-    <a href="#inicio" class="navbar-brand brand">
-      PET <span>PRO</span>
-      <small>EQUIPAMENTOS & INSPIRAÇÃO</small>
-    </a>
+  <!-- MENU -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand logo" href="#inicio">
+        RM <span>DECOR</span>
+      </a>
 
-    <button class="navbar-toggler" type="button"
-      data-bs-toggle="collapse" data-bs-target="#menu"
-      aria-label="Abrir menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#menu"
+        aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-        <li class="nav
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+
+        <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer" class="btn-principal">
+          Loja oficial
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <span class="tag">Decoração e acabamentos</span>
+        <h1>Transforme seus espaços com estilo e personalidade.</h1>
+        <p>
+          Descubra inspirações para renovar sua casa, valorizar
+          seus ambientes e criar espaços acolhedores e modernos.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#categorias" class="btn-principal">Explorar categorias</a>
+          <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer" class="btn-outline-custom" style="color:white;border-color:white;">
+            Visitar loja
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFÍCIOS -->
+  <section class="beneficios">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="beneficio">
+            <i class="bi bi-house-heart"></i>
+            <div>
+              <strong>Ambientes inspiradores</strong>
+              <small>Ideias para todos os espaços</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="beneficio">
+            <i class="bi bi-grid-3x3-gap"></i>
+            <div>
+              <strong>Diversas categorias</strong>
+              <small>Decoração e acabamento</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="beneficio">
+            <i class="bi bi-box-arrow-up-right"></i>
+            <div>
+              <strong>Conheça a loja</strong>
+              <small>Acesse o site oficial</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="secao" id="categorias">
+    <div class="container">
+      <div class="titulo-secao">
+        <span class="tag">Encontre sua inspiração</span>
+        <h2>Categorias para cada ambiente</h2>
+        <p>
+          Soluções decorativas e referências de acabamento para
+          transformar ambientes residenciais e comerciais.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a class="categoria" href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=850&q=85" alt="Sala com acabamento moderno" loading="lazy">
+            <div class="categoria-info">
+              <h3>Revestimentos</h3>
+              <span>Explorar loja <i class="bi bi-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a class="categoria" href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=850&q=85" alt="Ambiente com decoração sofisticada" loading="lazy">
+            <div class="categoria-info">
+              <h3>Decoração</h3>
+              <span>Explorar loja <i class="bi bi-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a class="categoria" href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=850&q=85" alt="Banheiro com acabamentos contemporâneos" loading="lazy">
+            <div class="categoria-info">
+              <h3>Banheiros</h3>
+              <span>Explorar loja <i class="bi bi-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="secao bg-light" id="produtos">
+    <div class="container">
+      <div class="titulo-secao">
+        <span class="tag">Conheça as possibilidades</span>
+        <h2>Produtos e soluções decorativas</h2>
+        <p>
+          Referências de produtos que ajudam a compor ambientes
+          funcionais, modernos e acolhedores.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <article class="produto">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=650&q=85" alt="Ambiente com acabamentos de parede" loading="lazy">
+            <div class="produto-info">
+              <h3>Painéis decorativos</h3>
+              <p>Inspirações para criar paredes de destaque e ambientes sofisticados.</p>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">Ver loja <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <article class="produto">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=650&q=85" alt="Ambiente com rodapés e acabamento" loading="lazy">
+            <div class="produto-info">
+              <h3>Rodapés e acabamentos</h3>
+              <p>Detalhes que valorizam a transição entre pisos e paredes.</p>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">Ver loja <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <article class="produto">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=650&q=85" alt="Banheiro moderno" loading="lazy">
+            <div class="produto-info">
+              <h3>Itens para banheiro</h3>
+              <p>Ideias para espaços de bem-estar com design contemporâneo.</p>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">Ver loja <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <article class="produto">
+            <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=650&q=85" alt="Sala decorada" loading="lazy">
+            <div class="produto-info">
+              <h3>Decoração de interiores</h3>
+              <p>Elementos para dar personalidade aos ambientes da casa.</p>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">Ver loja <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL -->
+  <section class="editorial">
+    <div class="container-fluid p-0">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6">
+          <img class="editorial-img"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+            alt="Ambiente residencial decorado"
+            loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <div class="editorial-texto">
+            <span class="tag">Seu espaço, seu estilo</span>
+            <h2>Ambientes que refletem sua personalidade.</h2>
+            <p>
+              Cada detalhe contribui para criar uma casa mais acolhedora.
+              Materiais, texturas e acabamentos podem transformar
+              a experiência de cada ambiente.
+            </p>
+            <p>
+              Explore ideias para combinar estética, praticidade e
+              conforto em diferentes projetos.
+            </p>
+            <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer" class="btn-principal mt-2">
+              Conhecer a loja
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTITUCIONAL -->
+  <section class="secao institucional" id="sobre">
+    <div class="container">
+      <div class="titulo-secao">
+        <span class="tag">Institucional</span>
+        <h2>Conheça a RM Decor</h2>
+        <p>
+          Informações sobre a empresa e os canais oficiais para
+          consultar produtos, disponibilidade e atendimento.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="institucional-card">
+            <i class="bi bi-building"></i>
+            <h3>Identificação empresarial</h3>
+            <p>
+              RMB Importação e Comércio LTDA<br>
+              CNPJ: 62.456.154/0001-40
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="institucional-card">
+            <i class="bi bi-geo-alt"></i>
+            <h3>Localização</h3>
+            <p>
+              Rua Ottokar Doerffel, 1112, Galpão D01<br>
+              Joinville, Santa Catarina<br>
+              CEP 89203-212
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="institucional-card">
+            <i class="bi bi-globe"></i>
+            <h3>Site oficial</h3>
+            <p>
+              Consulte produtos, informações comerciais e canais
+              de atendimento diretamente no domínio oficial.
+            </p>
+            <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer" class="btn-outline-custom mt-2">
+              Acessar site
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="banner-final" id="contato">
+    <div class="container">
+      <span class="tag">Descubra novas possibilidades</span>
+      <h2>Encontre ideias para seu próximo projeto.</h2>
+      <p>
+        Acesse o site oficial da RM Decor para consultar as opções
+        disponíveis e obter informações diretamente com a empresa.
+      </p>
+      <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer" class="btn-principal" style="background:var(--secundaria);border-color:var(--secundaria);">
+        Visitar RM Decor
+      </a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="logo mb-3">RM <span>DECOR</span></div>
+          <p>
+            Inspirações em decoração, acabamentos e soluções
+            para transformar ambientes.
+          </p>
+          <p>
+            Este modelo é uma página demonstrativa e não processa
+            pedidos ou pagamentos.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#categorias">Categorias</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#sobre">Institucional</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Dados da loja oficial</h4>
+          <p>
+            RMB Importação e Comércio LTDA<br>
+            CNPJ: 62.456.154/0001-40<br>
+            Rua Ottokar Doerffel, 1112<br>
+            Galpão D01, Joinville/SC<br>
+            CEP 89203-212
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Canais oficiais</h4>
+          <ul>
+            <li>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-globe me-2"></i> Site RM Decor
+              </a>
+            </li>
+            <li>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-bag me-2"></i> Consultar produtos
+              </a>
+            </li>
+            <li>
+              <a href="https://rmdecor.com.br/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-chat-dots me-2"></i> Atendimento oficial
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row g-3">
+          <div class="col-lg-8">
+            Página demonstrativa independente inspirada em decoração
+            e acabamentos. Não representa uma loja oficial adicional
+            nem declara vínculo comercial com a RM Decor.
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            © 2026 — Modelo demonstrativo. Imagens ilustrativas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
